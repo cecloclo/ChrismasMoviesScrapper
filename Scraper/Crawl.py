@@ -1,6 +1,6 @@
 from scrapy.crawler import CrawlerProcess
 from scrapy.utils.project import get_project_settings
-from newcrawler.newcrawler.spiders import applescrap
+#from newcrawler.newcrawler.spiders import applescrap
 import os
 
 
