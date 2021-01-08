@@ -17,7 +17,7 @@
 import scrapy
 
 class AlloSpider(scrapy.Spider):
-    name = "Films de noël"
+    name = "Filmsdenoel"
     start_urls = ["https://www.allocine.fr/recherche/movie/?q=no%C3%ABl",]
 
     def parse(self, response):
