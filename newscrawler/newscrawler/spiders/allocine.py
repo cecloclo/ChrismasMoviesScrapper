@@ -1,37 +1,50 @@
 import scrapy
-from ..items import alloItem
+#from items import alloItem
+from scrapy import Request
 
 class AllocineSpider(scrapy.Spider):
     name = 'allocine'
-    allowed_domains = ['allocine.fr']
-    start_urls = ['https://www.allocine.fr/recherche/?q=no%C3%ABl']
+    #allowed_domains = ['allocine.fr']
+    #start_urls = ['https://www.allocine.fr/recherche/?q=no%C3%ABl']
+    start_urls = ['https://www.allocine.fr/recherche/movie/?q=no%C3%ABl']
+
 
     def parse(self, response):
-        title = response.css('.titlebar-title titlebar-title-lg').extract_first()
-       # all_links = {
-        #    name:response.urljoin(url) for name, url in zip(
-         #   response.css("a.class=xXx meta-title-link")[3].css("a::text").extract(),
-          #  response.css("a.class=xXx meta-title-link")[3].css("a::attr(href)").extract())
-     #   }
-        yield {
-            "title":title#,
-          #  "all_links":all_links
-        }
+        for doc in response.xpath('//div[@class="sub-body"]'):
+          #  description_value = doc.css("div .synopsis ::text").extract()
+           # title_value = doc.css(".entity-card .meta-title ::text").extract()
+            image = doc.css("img .thumbnail-img b-loaded ::atr(scr)").getall()
+            clean_image_urls = []
+            for image_url in image:
+                clean_image_urls.append(doc.urljoin(image_url))
+            yield { #'description' : description_value,
+         #   'titre' : title_value,
+            'affiche' : image }
+        for i in range (1,35):
+            next_page_link = 'https://www.allocine.fr/recherche/movie/?q=no%C3%ABl&page='+str(i)
+            yield scrapy.Request(url=next_page_link, callback=self.parse)
 
 
-    def parse_category(self, response):
-        for article in response.css(".fleuve")[0].css("article"):
-            title = self.clean_spaces(article.css("h3 a::text").extract_first())
-            image = article.css("img::attr(data-src)").extract_first()
-            description = article.css(".txt3::text").extract_first()
+"""    def parse_category(self, response):
+        for article in response.css("div .sub-body"):
+            title = article.css("a .xXx meta-title-link").extract_first()
+          #  image = article.css("img::attr(data-src)").extract_first()
+            description = article.css("div .content-txt").extract_first()"""
 
-            yield alloItem(
+"""   yield alloItem(
                 title=title,
-                image=image,
+              #  image=image,
                 description=description
             )
+"""
 
 
-    def clean_spaces(self, string):
-        if string:
-            return " ".join(string.split())
+
+       # next_page = response.xpath("//nav[@class='pagination cf']/a[@class='xXx button button-md button-primary-full button-right']/[@href='/recherche/movie/?q=no%C3%ABl&page=2'").extract_first()
+        #next_page = response.xpath("//nav[@class='pagination cf']//a/@href").extract()      
+       # if next_page is not None:
+           # next_page_link = response.urljoin(next_page)
+
+def clean_spaces(self, string):
+    if string:
+        return " ".join(string.split())

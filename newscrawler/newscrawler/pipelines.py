@@ -10,4 +10,13 @@ from itemadapter import ItemAdapter
 
 class NewscrawlerPipeline:
     def process_item(self, item, spider):
-        return item
+        if item['title']:
+            item["title"] = clean_spaces(item["title"])
+            return item
+     #   else:
+        #    raise ItemAdapter("Missing title in %s" % item)
+
+
+def clean_spaces(string):
+    if string:
+        return " ".join(string.split())
