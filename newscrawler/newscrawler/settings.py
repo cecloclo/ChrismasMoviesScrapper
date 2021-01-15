@@ -11,6 +11,8 @@ BOT_NAME = 'newscrawler'
 
 SPIDER_MODULES = ['newscrawler.spiders']
 NEWSPIDER_MODULE = 'newscrawler.spiders'
+ITEM_PIPELINES = {'scrapy.pipelines.images.ImagesPipeline': 1}
+IMAGES_STORE = 'local_folder'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
