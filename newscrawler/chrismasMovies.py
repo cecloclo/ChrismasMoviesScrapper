@@ -5,7 +5,6 @@ import pymongo
 client = pymongo.MongoClient()
 data_films = client['allocine']
 collection = data_films['filmNoel']
-print(collection)
 
 app = Flask(__name__)
 
