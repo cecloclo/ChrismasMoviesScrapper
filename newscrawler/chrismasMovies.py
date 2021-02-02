@@ -18,7 +18,11 @@ def home_page():
 
 @app.route('/') 
 def search_page():
-    return render_template('about.html')
+    return render_template('elements.html')
+
+@app.route('/') 
+def info_page():
+    return render_template('generic.html')
 
 if __name__ == '__main__':
     app.run(debug=True, port=2745) 

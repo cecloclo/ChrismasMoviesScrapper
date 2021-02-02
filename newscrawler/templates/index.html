@@ -1,208 +1,177 @@
-<!DOCTYPE html>
-<html lang="fr">
+<!DOCTYPE HTML>
+<!--
+	Introspect by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Introspect by TEMPLATED</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta content="IE=edge" http-equiv="X-UA-Compatible">
-  <meta content="width=device-width,initial-scale=1" name="viewport">
-  <meta content="Page description" name="description">
-  <meta name="google" content="notranslate" />
-  <meta content="Mashup templates have been developped by Orson.io team" name="author">
+		 <!-- Font -->
+		 <link rel="stylesheet" href="{{ url_for('static', filename='fonts/fontawesome-webfont.eot') }}">
+		 <link rel="stylesheet" href="{{ url_for('static', filename='fonts/fontawesome-webfont.ttf') }}">
+		 <link rel="stylesheet" href="{{ url_for('static', filename='fonts/fontawesome-webfont.woff') }}">
+		 <link rel="stylesheet" href="{{ url_for('static', filename='fonts/fontawesome-webfont.woff2') }}">
+		 <link rel="stylesheet" href="{{ url_for('static', filename='fonts/fontawesome-webfont.svg') }}">
+		 	 
+		 <!-- JS -->
+		 <link rel="stylesheet" href="{{ url_for('static', filename='js/jquery.min.js') }}">
+		 <link rel="stylesheet" href="{{ url_for('static', filename='js/main.js') }}">
+		 <link rel="stylesheet" href="{{ url_for('static', filename='js/skel.min.js') }}">
+		 <link rel="stylesheet" href="{{ url_for('static', filename='js/util.js') }}">
 
-  <!-- Disable tap highlight on IE -->
-  <meta name="msapplication-tap-highlight" content="no">
-  
-  <link href="./assets/apple-icon-180x180.png" rel="apple-touch-icon">
-  <link href="./assets/favicon.ico" rel="icon">
+		 <!-- CSS -->
+		 <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+		 <link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
 
+	</head>
+	<body>
 
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="{{ url_for('home_page')}}" class="logo">introspect</a>
+					<nav id="nav">
+						<a href="{{ url_for('home_page')}}">Home</a>
+						<a href="{{ url_for('info_page')}}">Generic</a>
+						<a href="{{ url_for('search_page')}}">Elements</a>
+					</nav>
+				</div>
+			</header>
+			<a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
 
-  <title>Films de Noël</title>  
+		<!-- Banner -->
+			<section id="banner">
+				<div class="inner">
+					<h1>Introspect: <span>A free + fully responsive<br />
+					site template by TEMPLATED</span></h1>
+					<ul class="actions">
+						<li><a href="{{ url_for('search_page')}}" class="button alt">Trouver un film</a></li>
+					</ul>
+				</div>
+			</section>
 
-<link href="./main.82cfd66e.css" rel="stylesheet"></head>
+		<!-- One -->
+			<section id="one">
+				<div class="inner">
+					<header>
+						<h2>Magna Etiam Lorem</h2>
+					</header>
+					<p>Suspendisse mauris. Fusce accumsan mollis eros. Pellentesque a diam sit amet mi ullamcorper vehicula. Integer adipiscin sem. Nullam quis massa sit amet nibh viverra malesuada. Nunc sem lacus, accumsan quis, faucibus non, congue vel, arcu, erisque hendrerit tellus. Integer sagittis. Vivamus a mauris eget arcu gravida tristique. Nunc iaculis mi in ante.</p>
+					<ul class="actions">
+						<li><a href="#" class="button alt">Learn More</a></li>
+					</ul>
+				</div>
+			</section>
 
-<body>
+		<!-- Two -->
+			<section id="two">
+				<div class="inner">
+					<article>
+						<div class="content">
+							<header>
+								<h3>Pellentesque adipis</h3>
+							</header>
+							<div class="image fit">
+								<img src="images/pic01.jpg" alt="" />
+							</div>
+							<p>Cumsan mollis eros. Pellentesque a diam sit amet mi magna ullamcorper vehicula. Integer adipiscin sem. Nullam quis massa sit amet lorem ipsum feugiat tempus.</p>
+						</div>
+					</article>
+					<article class="alt">
+						<div class="content">
+							<header>
+								<h3>Morbi interdum mol</h3>
+							</header>
+							<div class="image fit">
+								<img src="images/pic02.jpg" alt="" />
+							</div>
+							<p>Cumsan mollis eros. Pellentesque a diam sit amet mi magna ullamcorper vehicula. Integer adipiscin sem. Nullam quis massa sit amet lorem ipsum feugiat tempus.</p>
+						</div>
+					</article>
+				</div>
+			</section>
 
-<!-- Add your content of header -->
-<header class="">
-  <div class="navbar navbar-default visible-xs">
-    <button type="button" class="navbar-toggle collapsed">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <a href="./index.html" class="navbar-brand">Mashup Template</a>
-  </div>
+		<!-- Three -->
+			<section id="three">
+				<div class="inner">
+					<article>
+						<div class="content">
+							<span class="icon fa-laptop"></span>
+							<header>
+								<h3>Tempus Feugiat</h3>
+							</header>
+							<p>Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia, magna lorem ullamcorper laoreet, lectus arcu.</p>
+							<ul class="actions">
+								<li><a href="#" class="button alt">Learn More</a></li>
+							</ul>
+						</div>
+					</article>
+					<article>
+						<div class="content">
+							<span class="icon fa-diamond"></span>
+							<header>
+								<h3>Aliquam Nulla</h3>
+							</header>
+							<p>Ut convallis, sem sit amet interdum consectetuer, odio augue aliquam leo, nec dapibus tortor nibh sed.</p>
+							<ul class="actions">
+								<li><a href="#" class="button alt">Learn More</a></li>
+							</ul>
+						</div>
+					</article>
+					<article>
+					<div class="content">
+							<span class="icon fa-laptop"></span>
+							<header>
+								<h3>Sed Magna</h3>
+							</header>
+							<p>Suspendisse mauris. Fusce accumsan mollis eros. Pellentesque a diam sit amet mi ullamcorper vehicula.</p>
+							<ul class="actions">
+								<li><a href="#" class="button alt">Learn More</a></li>
+							</ul>
+						</div>
+					</article>
+				</div>
+			</section>
 
-  <nav class="sidebar">
-    <div class="navbar-collapse" id="navbar-collapse">
-      <div class="site-header hidden-xs">
-          <a class="site-brand" href="./index.html" title="">
-            <img class="img-responsive site-logo" alt="" src="./img/movieIcon.png">
-          </a>
-        <p>Trouver le meilleur film de noël pour vous remonter le moral</p>
-      </div>
-      <ul class="nav">
-        <li><a href="./index.html" title="">Home</a></li>
-        <li class="nav-item"> <a class="nav-link" href="{{ url_for('search_page')}}">Recherche</a> </li>
-        <li><a href="./contact.html" title="">Contact</a></li>
+		<!-- Footer -->
+			<section id="footer">
+				<div class="inner">
+					<header>
+						<h2>Get in Touch</h2>
+					</header>
+					<form method="post" action="#">
+						<div class="field half first">
+							<label for="name">Name</label>
+							<input type="text" name="name" id="name" />
+						</div>
+						<div class="field half">
+							<label for="email">Email</label>
+							<input type="text" name="email" id="email" />
+						</div>
+						<div class="field">
+							<label for="message">Message</label>
+							<textarea name="message" id="message" rows="6"></textarea>
+						</div>
+						<ul class="actions">
+							<li><input type="submit" value="Send Message" class="alt" /></li>
+						</ul>
+					</form>
+					<div class="copyright">
+						&copy; Untitled Design: <a href="https://templated.co/">TEMPLATED</a>. Images <a href="https://unsplash.com/">Unsplash</a>
+					</div>
+				</div>
+			</section>
 
-      </ul>
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
 
-      <nav class="nav-footer">
-        <p class="nav-footer-social-buttons">
-          <a class="fa-icon" href="https://www.instagram.com/" title="">
-            <i class="fa fa-instagram"></i>
-          </a>
-          <a class="fa-icon" href="https://dribbble.com/" title="">
-            <i class="fa fa-dribbble"></i>
-          </a>
-          <a class="fa-icon" href="https://twitter.com/" title="">
-            <i class="fa fa-twitter"></i>
-          </a>
-        </p>
-        <p>© Untitled | Website created with <a href="http://www.mashup-template.com/" title="Create website with free html template"></a>/<a href="https://www.unsplash.com/" title="Beautiful Free Images">Unsplash</a></p>
-      </nav>  
-    </div> 
-  </nav>
-</header>
-<main class="" id="main-collapse">
-
-<!-- Add your site or app content here -->
- 
-<div class="hero-full-wrapper">
-  <div class="grid">
-  <div class="gutter-sizer"></div>
-    <div class="grid-sizer"></div>
-    
-    <div class="grid-item">
-      <img class="img-responsive" alt="" src="./assets/images/img-12.jpg">
-      <a href="./project.html" class="project-description">
-        <div class="project-text-holder">
-          <div class="project-text-inner">
-            <h3>Vivamus vestibulum</h3>
-            <p>Discover more</p>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    
-    <div class="grid-item">
-      <img class="img-responsive" alt="" src="./assets/images/img-05.jpg">
-      <a href="./project.html" class="project-description">
-        <div class="project-text-holder">
-          <div class="project-text-inner">
-            <h3>Vivamus vestibulum</h3>
-            <p>Discover more</p>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <div class="grid-item">
-      <img class="img-responsive" alt="" src="./assets/images/img-13.jpg">
-      <a href="./project.html" class="project-description">
-        <div class="project-text-holder">
-          <div class="project-text-inner">
-            <h3>Vivamus vestibulum</h3>
-            <p>Discover more</p>
-          </div>
-        </div>
-      </a>
-    </div>
-    <div class="grid-item">
-      <img class="img-responsive" alt="" src="./assets/images/img-04.jpg">
-      <a href="./project.html" class="project-description">
-        <div class="project-text-holder">
-          <div class="project-text-inner">
-            <h3>Vivamus vestibulum</h3>
-            <p>Discover more</p>
-          </div>
-        </div>
-      </a>
-    </div>
-    
-    <div class="grid-item">
-      <img class="img-responsive" alt="" src="./assets/images/img-07.jpg">
-      <a href="./project.html" class="project-description">
-        <div class="project-text-holder">
-          <div class="project-text-inner">
-            <h3>Vivamus vestibulum</h3>
-            <p>Discover more</p>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <div class="grid-item">
-      <img class="img-responsive" alt="" src="./assets/images/img-11.jpg">
-      <a href="./project.html" class="project-description">
-        <div class="project-text-holder">
-          <div class="project-text-inner">
-            <h3>Vivamus vestibulum</h3>
-            <p>Discover more</p>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <div class="grid-item">
-      <img class="img-responsive" alt="" src="./assets/images/img-10.jpg">
-      <a href="./project.html" class="project-description">
-        <div class="project-text-holder">
-          <div class="project-text-inner">
-            <h3>Vivamus vestibulum</h3>
-            <p>Discover more</p>
-          </div>
-        </div>
-      </a>
-    </div>
-    <div class="grid-item">
-      <img class="img-responsive" alt="" src="./assets/images/img-03.jpg">
-      <a href="./project.html" class="project-description">
-        <div class="project-text-holder">
-          <div class="project-text-inner">
-            <h3>Vivamus vestibulum</h3>
-            <p>Discover more</p>
-          </div>
-        </div>
-      </a>
-    </div>
-    
-  </div>
-</div>
-
-
-<script>
-  document.addEventListener("DOMContentLoaded", function (event) {
-     masonryBuild();
-  });
-</script>
-
-</main>
-
-<script>
-document.addEventListener("DOMContentLoaded", function (event) {
-  navbarToggleSidebar();
-  navActivePage();
-});
-</script>
-
-<!-- Google Analytics: change UA-XXXXX-X to be your site's ID 
-
-<script>
-  (function (i, s, o, g, r, a, m) {
-    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-      (i[r].q = i[r].q || []).push(arguments)
-    }, i[r].l = 1 * new Date(); a = s.createElement(o),
-      m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-  ga('create', 'UA-XXXXX-X', 'auto');
-  ga('send', 'pageview');
-</script>
-
---><script type="text/javascript" src="./main.85741bff.js"></script></body>
-
+	</body>
 </html>
