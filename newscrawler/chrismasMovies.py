@@ -1,10 +1,5 @@
 from flask import Flask
 from flask import render_template
-import pymongo
-
-client = pymongo.MongoClient()
-data_films = client['allocine']
-collection = data_films['filmNoel']
 
 app = Flask(__name__)
 
@@ -16,11 +11,11 @@ def page_not_found(e):
 def home_page():
     return render_template('index.html')
 
-@app.route('/') 
+@app.route('/search_page/') 
 def search_page():
     return render_template('elements.html')
 
-@app.route('/') 
+@app.route('/info_page/') 
 def info_page():
     return render_template('generic.html')
 
