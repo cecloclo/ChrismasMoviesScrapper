@@ -2,8 +2,8 @@ import scrapy
 from scrapy import Request
 
 
-class AllocineSpider(scrapy.Spider):
-    name = 'allocinespi'
+class cineSpider(scrapy.Spider):
+    name = 'cinespi'
     start_urls = ['https://www.senscritique.com/liste/Films_de_Noel/386874#page-1/order-default/']
 
     def clean_spaces(self, string):
@@ -18,11 +18,13 @@ class AllocineSpider(scrapy.Spider):
             #description_value = doc.css('.content-layout').css('.section-wrap').css('ul').css('li').css(".synopsis").css(".content-txt").extract()
             eval_spect = doc.css('.elli').css('li.elli-item').css('.erra-main').css('.erra-ratings').css('a.erra-global ::text').extract()
             image_urls = doc.css('.elli').css('li.elli-item').css('.elli-media').css('.d-link').css('.lazy ::attr(data-original)').extract()
+            images_1 = doc.css('.elli').css('li.elli-item').css('.elli-media').css('.d-link ::attr(src)').extract()
 
             yield {
                 'titre' : title_value,
                 'Evaluation spectateur' : eval_spect,
-                'image_urls' : image_urls
+                'image_urls' : image_urls,
+                'images_1' : images_1
              }
 
         
