@@ -33,11 +33,20 @@ df = df.drop('images', axis = 1)
 #df['description']
 #df['description'][0]# = [item.replace("\n    \n    \n                   \n                \n    ", "") for item in df['description']]
 
+df['description'][0] = [item.replace(",                       ", " ") for item in df['description'][0]]
+df['description'][0] = [item.replace("\n        \n            ", "") for item in df['description'][0]]
+df['description'][0] = [item.replace("\n\n    ", "\n") for item in df['description'][0]]
+df['description'][0] = [item.replace("\n    \n    \n                   \n                \n    ", "") for item in df['description'][0]]
+df['description'][0] = [item.replace("\n                      ", "") for item in df['description'][0]]
+df['description'][0] = [item.replace("'',", "") for item in df['description'][0]]
+df['description'][0] = [item.replace("\n", "") for item in df['description'][0]]
+df['description'][0].remove(df['description'][0][0])
 
 
-print(df['description'][0][0])
+#df['description']= df['description'][0][0].drop()
+#print(df['description'][0])
 
-# df['Evaluation spectateur'] = [item.replace("--", "None") for item in df['Evaluation spectateur'][i]]
+df['Evaluation spectateur'] = [item.replace("--", "None") for item in df['Evaluation spectateur'][i]]
 
 # df['titre'] = [item.replace(" \n        , ", "") for item in df['titre']]
 # df['titre'] = [item.replace("\n            ", "") for item in df['titre']]
