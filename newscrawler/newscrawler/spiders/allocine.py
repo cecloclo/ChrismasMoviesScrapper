@@ -25,6 +25,6 @@ class AllocineSpider(scrapy.Spider):
             'Evaluation spectateur' : eval_spect 
             }
 
-        for i in range (1,35):
+        """for i in range (1,35):
             next_page_link = 'https://www.allocine.fr/recherche/movie/?q=no%C3%ABl&page='+str(i)
-            yield scrapy.Request(url=next_page_link, callback=self.parse)
+            yield scrapy.Request(url=next_page_link, callback=self.parse)"""

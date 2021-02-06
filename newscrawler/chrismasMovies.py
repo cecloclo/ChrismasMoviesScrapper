@@ -19,10 +19,6 @@ def search_page():
 def info_page():
     return render_template('generic.html')
 
-@app.route('/topten_page/') 
-def graphique():
-    return render_template('graphics.html')
-
 if __name__ == '__main__':
     #app.run(debug=True, port=2745)
     app.run(host='0.0.0.0')
