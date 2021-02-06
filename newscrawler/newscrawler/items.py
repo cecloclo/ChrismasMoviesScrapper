@@ -10,5 +10,4 @@ class alloItem(scrapy.Item):
     title = scrapy.Field()
     description = scrapy.Field()
     image_urls = scrapy.Field()
-
-allo_item = alloItem(title="Aled", description="C'est pas tres drole ca", image_urls='https://fr.web.img5.acsta.net/r_1920_1080/pictures/20/10/02/12/08/4145841.jpg')
+    eval_spect = scrapy.Field()

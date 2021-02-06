@@ -1,30 +1,41 @@
 import scrapy
 from scrapy import Request
 
-class AllocineSpider(scrapy.Spider):
-    name = 'allocinespi'
-    start_urls = ['https://www.allocine.fr/recherche/movie/?q=no%C3%ABl']
+
+class cineSpider(scrapy.Spider):
+    name = 'cinespi'
+    start_urls = ['https://www.senscritique.com/liste/Films_de_Noel/386874#page-1/order-default/']
 
     def clean_spaces(self, string):
         if string:
             return " ".join(string.split())
 
+    def scrap(self, response):
 
-    def parse(self, response):
+        for doc in response.css('.d-grid-main'):
 
-        for doc in response.xpath('//div[@class="sub-body"]'):
-            description_value = doc.css("div .synopsis ::text").extract()
-            title_value = doc.css(".entity-card .meta-title ::text").extract()
-            eval_spect = doc.css("span.stareval-note ::text").extract()
-            image_urls = doc.css('.thumbnail img::attr(data-src)').getall()
-        
+            title_value = doc.css('.elli').css('li.elli-item').css('h3.d-heading2').css('a::text').extract()  
+            #description_value = doc.css('.content-layout').css('.section-wrap').css('ul').css('li').css(".synopsis").css(".content-txt").extract()
+            eval_spect = doc.css('.elli').css('li.elli-item').css('.erra-main').css('.erra-ratings').css('a.erra-global ::text').extract()
+            image_urls = doc.css('.elli').css('li.elli-item').css('.elli-media').css('.d-link').css('.lazy ::attr(data-original)').extract()
+            images_1 = doc.css('.elli').css('li.elli-item').css('.elli-media').css('.d-link ::attr(src)').extract()
 
-            yield {'description' : description_value,
-            'titre' : title_value,
-            'image_urls' : image_urls,
-            'Evaluation spectateur' : eval_spect 
-            }
+            yield {
+                'titre' : title_value,
+                'Evaluation spectateur' : eval_spect,
+                'image_urls' : image_urls,
+                'images_1' : images_1
+             }
 
+<<<<<<< HEAD
         """for i in range (1,35):
             next_page_link = 'https://www.allocine.fr/recherche/movie/?q=no%C3%ABl&page='+str(i)
             yield scrapy.Request(url=next_page_link, callback=self.parse)"""
+=======
+        
+
+    def parse(self, response):
+        next_page_link = 'https://www.senscritique.com/liste/Films_de_Noel/386874#page-1/order-default/'
+        yield scrapy.Request(url=next_page_link, callback=self.scrap)
+        
+>>>>>>> f28d00d91700722aa0e445aec312cb86ffb29919
