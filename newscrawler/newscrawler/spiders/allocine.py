@@ -27,9 +27,8 @@ class cineSpider(scrapy.Spider):
                 'images_1' : images_1
              }
 
-        
-
     def parse(self, response):
         next_page_link = 'https://www.senscritique.com/liste/Films_de_Noel/386874#page-1/order-default/'
         yield scrapy.Request(url=next_page_link, callback=self.scrap)
         
+
