@@ -3,6 +3,9 @@ from flask import render_template, request
 import json
 from elasticsearch import Elasticsearch
 from elasticsearch.helpers import bulk
+from time import sleep
+
+sleep(5)
 
 LOCAL = True
 es_client = Elasticsearch(hosts=["localhost" if LOCAL else "elastic"])
