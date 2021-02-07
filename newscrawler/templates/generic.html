@@ -73,8 +73,8 @@
 									</div>
 									<div class="card__info">
 										<h3 class="card__title">{{hit['_source']['titre']}}</h3>
-										<span class="card__category">{{hit['_source']['Evaluation spectateur']}}</span>
-										<img src="{{hit['_source']['image_urls']}}">
+										<span class="card__category">Note : {{hit['_source']['Evaluation spectateur']}}</span>
+										<br><img src="{{hit['_source']['image_urls']}}">
 									</div>
 								</li>
 								{% endfor %}
