@@ -9,9 +9,10 @@ This project is a web site which allows the users to discover new christmas movi
 **RUN**
 
 To run this project, you have to launch Docker and enter 
-`docker-compose up -d`
+`docker-compose up -d --build`
 
 After, you run the python script chrismasMovies.py, that should give you the link to the app : http://127.0.0.1:5000/
+
 
 <img src="img/Image1.jpg">
 <img src="img/Image2.jpg">
