@@ -8,8 +8,10 @@ es_client = Elasticsearch(hosts=["localhost" if LOCAL else "elasticsearch"], por
 
 es_client.ping()
 
-with open('data2.json') as json_data:
+with open('dataF.json') as json_data:
     v = json.load(json_data)
+
+document = v
 
 QUERY = {
   "query": {
