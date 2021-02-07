@@ -10,7 +10,7 @@ WORKDIR C:\Users\julie\Desktop\ESIEE_Paris\E4\Cours\Data_Engineering\Projet\Chri
 
 
 RUN pip install Flask==0.10.1
-
+RUN pip install elasticsearch==7.1.0
 
 COPY . /ChrismasMoviesScrapper
 ADD . .
