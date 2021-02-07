@@ -77,6 +77,6 @@ def info_page():
     return render_template('generic.html', res=result)
 
 if __name__ == '__main__':
-    #app.run(debug=True, port=5000)
-    app.run(host='localhost')
+    app.run(debug=True, port=5000)
+    app.run(host='0.0.0.0')
     #app.run()
