@@ -78,11 +78,11 @@
 									</div>
 							</form>
 							</header>
-							</div>
-							<div class="result-number">
+			
+							<div class="number-movies">
 								{% if res %}
 								{% if res['hits']['hits']|length == 0 %}
-								<h4>No movies found</h4>
+								<h3>No movies found</h3>
 								{% else %}
 								<p>Number of movies {{res['hits']['hits']|length}}</p>
 								{% endif %}
@@ -90,6 +90,7 @@
 								<p> There are {{movies|length}} movies</p>
 								{% endif %}
 							  </div>
+							</div>
 						</section>
 						<section>
 							<div class="movie-list">
@@ -109,8 +110,8 @@
 										</div>
 										<div class="card__info">
 											<h3 class="card__title">{{hit['_source']['titre']}}</h3>
-											<span class="card__category">{{hit['_source']['Evaluation spectateur']}}</span>
-											<img src="{{hit['_source']['image_urls']}}">
+											<span class="card__category">Note : {{hit['_source']['Evaluation spectateur']}}</span>
+											<br><img src="{{hit['_source']['image_urls']}}">
 										</div>
 									</li>
 									{% endfor %}
@@ -132,8 +133,8 @@
 										</div>
 										<div class="card__info">
 											<h3 class="card__title">{{hit['_source']['titre']}}</h3>
-											<span class="card__category">{{hit['_source']['Evaluation spectateur']}}</span>
-											<img src="{{hit['_source']['image_urls']}}">
+											<span class="card__category">Note : {{hit['_source']['Evaluation spectateur']}}</span>
+											<br><img src="{{hit['_source']['image_urls']}}">
 										</div>
 									</li>
 									{% endfor %}
