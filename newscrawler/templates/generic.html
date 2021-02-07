@@ -49,7 +49,7 @@
 				<header class="major special">
 					<h1>Top Rated Christmas Movies </h1>
 					<p></p>
-					<p>We have selected for you the 10 tp rated Christmas movies</p>
+					<p>We have selected for you the 10 top rated Christmas movies</p>
 				</header>
 			</div>
 		</section>
@@ -58,25 +58,27 @@
 			<section id="two">
 				<div class="inner">
 					<article>
-						<div class="content">
-							<header>
-								<h3></h3>
-							</header>
-							<div class="image fit">
-								<img src="images/pic01.jpg" alt="" />
-							</div>
-							<p>Cumsan mollis eros. Pellentesque a diam sit amet mi magna ullamcorper vehicula. Integer adipiscin sem. Nullam quis massa sit amet lorem ipsum feugiat tempus.</p>
-						</div>
-					</article>
-					<article class="alt">
-						<div class="content">
-							<header>
-								<h3>Morbi interdum mol</h3>
-							</header>
-							<div class="image fit">
-								<img src="images/pic02.jpg" alt="" />
-							</div>
-							<p>Cumsan mollis eros. Pellentesque a diam sit amet mi magna ullamcorper vehicula. Integer adipiscin sem. Nullam quis massa sit amet lorem ipsum feugiat tempus.</p>
+						<div class="film-list">
+							<ul class="cards">
+								{% for hit in res['hits']['hits'] %}
+								<li class="card card--1">
+									<div class="card__info-hover">
+										<div class="card__clock-info">
+											<span class="card__time">{% if hit['_source']['titre'] != None %}
+												{% else %}
+												<p>error</p>
+												{% endif %}</span>
+										</div>
+			
+									</div>
+									<div class="card__info">
+										<h3 class="card__title">{{hit['_source']['titre']}}</h3>
+										<span class="card__category">{{hit['_source']['Evaluation spectateur']}}</span>
+										<img src="{{hit['_source']['image_urls']}}">
+									</div>
+								</li>
+								{% endfor %}
+							</ul>
 						</div>
 					</article>
 				</div>
