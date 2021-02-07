@@ -1,8 +1,8 @@
 from flask import Flask
 from flask import render_template
-# from elasticsearch import Elasticsearch
-# from elasticsearch.helpers import bulk
-# import json
+#from elasticsearch import Elasticsearch
+#from elasticsearch.helpers import bulk
+#import json
 
 # LOCAL = True
 # es_client = Elasticsearch(hosts=["localhost" if LOCAL else "elastic"])
