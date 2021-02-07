@@ -1,0 +1,123 @@
+# version: '3'
+
+
+# services:
+
+
+#   app:
+#     build:
+#       context: .
+#       dockerfile: Dockerfile_flask
+#     hostname: app
+#     restart: unless-stopped
+
+#     container_name: dockerfile_flask
+#     environment:
+#       APP_ENV: "prod"
+#       APP_DEBUG: "False"
+#       APP_PORT: 5000
+#      # MONGODB_DATABASE: mongodb
+#      # MONGODB_HOSTNAME: mongodb
+#       FLASK_ENV: development
+#     ports:
+#      - "5000:5000"
+#     command: [ "python", "chrismasMovies.py" ]
+#    # volumes:
+#     #  - ./app:/home/dev/code/app*
+#     links:
+#       - elasticsearch
+
+
+
+#   # mongodb:
+#   #   image: mongo:4.0.8
+#   #   hostname: mongodb
+#   #   container_name: mongodb
+#   #   restart: unless-stopped
+#   #   command: mongod
+#   #   environment:
+#   #     MONGO_INITDB_DATABASE: mongodb
+#   #     MONGODB_DATA_DIR: /data/db
+#   #     MONDODB_LOG_DIR: /dev/null
+#   #   volumes:
+#   #     - mongodbdata:/data/db
+#   #   ports:
+#   #       - "27017:27017"
+
+
+#   elasticsearch:
+#     image: docker.elastic.co/elasticsearch/elasticsearch:7.10.2
+#     hostname: elasticsearch
+#     container_name: elasticsearch
+#    # environment:
+#    #   - bootstrap.memory_lock=true
+#     #  - discovery.type=single-node
+#     #  - "ES_JAVA_OPTS=-Xms2g -Xmx2g"
+#     #command: mongod
+#     ports:
+#         - "9200:9200"
+
+
+#   # scraper:
+
+#   # #   build:
+#   # #     context: .
+#   # #     dockerfile: Dockerfile_scraper
+#   # #   hostname: scraper
+#   # #   container_name: scraper
+#   # #   restart: always
+
+#   # #   ports:
+#   # #   - "9080:9080"
+#   # #   volumes:
+#   # #   - ./Scraper:/scrapyrt/project
+
+#   # #   links:
+#   # #     - mongodb
+#   # #     - elasticsearch
+
+
+# networks:
+#   default:
+
+# volumes:
+#  # mongodbdata:
+#  #   driver: local
+##   #appdata:
+#     driver: local
+
+
+version: '3'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile_flask
+    hostname: app
+    restart: unless-stopped
+    container_name: dockerfile_flask
+    environment:
+      APP_ENV: "prod"
+      APP_DEBUG: "False"
+      APP_PORT: 5000
+      # MONGODB_DATABASE: mongodb
+      # MONGODB_HOSTNAME: mongodb
+      FLASK_ENV: development
+    ports:
+      - "5000:5000"
+    command: [ "python", "chrismasMovies.py" ]
+#    # volumes:
+#     #  - ./app:/home/dev/code/app*
+    links:
+      - elastic
+
+  elastic:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.10.2
+    container_name: elastic #search
+    environment:
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - discovery.type=single-node
+    ports:
+      - "9200:9200"
+  

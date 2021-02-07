@@ -27,15 +27,8 @@ class cineSpider(scrapy.Spider):
                 'images_1' : images_1
              }
 
-<<<<<<< HEAD
-        """for i in range (1,35):
-            next_page_link = 'https://www.allocine.fr/recherche/movie/?q=no%C3%ABl&page='+str(i)
-            yield scrapy.Request(url=next_page_link, callback=self.parse)"""
-=======
-        
-
     def parse(self, response):
         next_page_link = 'https://www.senscritique.com/liste/Films_de_Noel/386874#page-1/order-default/'
         yield scrapy.Request(url=next_page_link, callback=self.scrap)
         
->>>>>>> f28d00d91700722aa0e445aec312cb86ffb29919
+
