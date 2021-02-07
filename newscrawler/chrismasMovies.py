@@ -5,7 +5,7 @@ from elasticsearch.helpers import bulk
 import json
 
 LOCAL = True
-es_client = Elasticsearch(hosts=["localhost" if LOCAL else "elasticsearch"])
+es_client = Elasticsearch(hosts=["localhost" if LOCAL else "elastic"])
 
 with open('dataF.json') as json_data:
     v = json.load(json_data)
